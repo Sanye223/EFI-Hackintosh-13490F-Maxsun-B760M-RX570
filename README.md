@@ -307,9 +307,18 @@ tools/macrecovery/ Recovery image downloader for Windows users
 
 - [Acidanthera](https://github.com/acidanthera) — OpenCore, Lilu, VirtualSMC, WhateverGreen, AppleALC, RestrictEvents, BrcmPatchRAM
 - [OpenIntelWireless](https://github.com/OpenIntelWireless) — AirportItlwm, IntelBluetoothFirmware
+- [laobamac/itlwm](https://github.com/laobamac/itlwm) — the AirportItlwm build for macOS 26 used here (2.4.0-alpha, commit `738d4c6`); this fork is where Tahoe support currently lives
 - [corpnewt](https://github.com/corpnewt) — GenSMBIOS, USBMap, macrecovery
 - The InsanelyMac and r/hackintosh communities for their write-ups on Tahoe USB behaviour
 
 ## Disclaimer
 
 This configuration is published for reference on hardware identical or very close to the list above. Applying it to different hardware can prevent your machine from booting. Back up your existing EFI before replacing anything, and keep a working USB installer within reach. Use at your own risk.
+
+---
+
+### Not affiliated with Apple
+
+This project has **no connection to Apple Inc.** It is not authorized, endorsed, sponsored or supported by Apple in any way. macOS is a trademark of Apple Inc., and every other trademark or product name mentioned here belongs to its respective owner.
+
+What this repository contains is an unofficial, community-built configuration for running macOS on hardware Apple never sold. It exists for educational and reference purposes only, and comes with no warranty of any kind. If you need a supported Mac, buy one from Apple.

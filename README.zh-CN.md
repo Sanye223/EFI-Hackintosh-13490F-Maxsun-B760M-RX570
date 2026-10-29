@@ -307,9 +307,18 @@ tools/macrecovery/ Windows 用户的恢复镜像下载脚本
 
 - [Acidanthera](https://github.com/acidanthera) — OpenCore、Lilu、VirtualSMC、WhateverGreen、AppleALC、RestrictEvents、BrcmPatchRAM
 - [OpenIntelWireless](https://github.com/OpenIntelWireless) — AirportItlwm、IntelBluetoothFirmware
+- [laobamac/itlwm](https://github.com/laobamac/itlwm) — 本仓库使用的 macOS 26 版 AirportItlwm 出自这个分支（2.4.0-alpha，提交 `738d4c6`）；目前 Tahoe 支持就维护在这里
 - [corpnewt](https://github.com/corpnewt) — GenSMBIOS、USBMap、macrecovery
 - InsanelyMac 与 r/hackintosh 社区关于 Tahoe USB 行为的讨论
 
 ## 免责声明
 
 本配置仅面向与上表相同或非常接近的硬件，供参考使用。套用到其他硬件上可能导致无法开机。替换任何文件前请先备份现有 EFI，并手边留一个能用的 U 盘安装盘。风险自负。
+
+---
+
+### 与 Apple 无关
+
+本项目与 **Apple Inc. 没有任何关系**，未获得 Apple 的授权、认可、赞助或支持。macOS 是 Apple Inc. 的商标，文中提到的其他商标与产品名称均归各自所有者。
+
+本仓库提供的是一份非官方的社区配置，用于在 Apple 从未销售过的硬件上运行 macOS，仅供学习与参考，不附带任何形式的担保。如果你需要一台受官方支持的 Mac，请向 Apple 购买。
