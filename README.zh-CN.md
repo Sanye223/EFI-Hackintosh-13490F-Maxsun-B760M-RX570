@@ -328,8 +328,6 @@ tools/macrecovery/ Windows 用户的恢复镜像下载脚本
 - **[ErrorErrorError](https://github.com/ErrorErrorError)** —— UserClient 修复
 - **[Acidanthera](https://github.com/acidanthera)** —— MacKernelSDK，编译这个 kext 时用到
 
-这份名单取自 [laobamac/itlwm 的 Credits](https://github.com/laobamac/itlwm#credits)，上面列的正是那个项目本身所站立的肩膀。
-
 ## 免责声明
 
 本配置仅面向与上表相同或非常接近的硬件，供参考使用。套用到其他硬件上可能导致无法开机。替换任何文件前请先备份现有 EFI，并手边留一个能用的 U 盘安装盘。风险自负。

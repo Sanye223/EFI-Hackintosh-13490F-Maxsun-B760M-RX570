@@ -328,8 +328,6 @@ tools/macrecovery/ Recovery image downloader for Windows users
 - **[ErrorErrorError](https://github.com/ErrorErrorError)** — UserClient bug fixes
 - **[Acidanthera](https://github.com/acidanthera)** — MacKernelSDK, used to build the kext
 
-This list comes from the [Credits section of laobamac/itlwm](https://github.com/laobamac/itlwm#credits); everything above is what that project in turn stands on.
-
 ## Disclaimer
 
 This configuration is published for reference on hardware identical or very close to the list above. Applying it to different hardware can prevent your machine from booting. Back up your existing EFI before replacing anything, and keep a working USB installer within reach. Use at your own risk.
