@@ -1,6 +1,6 @@
 <div align="center">
 
-# EFI-Hackintosh-i5-13490F-Maxsun-Terminator-B760M-D4-RX570
+# Maxsun B760M D4 Hackintosh
 
 **铭瑄终结者 B760M D4 · i5-13490F · RX 570 · AX210 的 macOS Tahoe OpenCore EFI**
 
