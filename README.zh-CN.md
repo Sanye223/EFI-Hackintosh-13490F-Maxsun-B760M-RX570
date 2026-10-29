@@ -168,7 +168,9 @@ Chipset: BCM_4350C2    Firmware: v0    Address: NULL    State: Off
 
 固件驱动匹配到了设备，但 `start()` 失败，固件始终没上传。
 
-真正的堵点还要往前一层。`IntelBTPatcher` 在插件配置里写了一个**支持的最高内核版本**，2.5.0 这个正式版的写法停在 macOS 15，于是 Lilu 在 Tahoe 上直接拒绝加载它；固件上传补丁没打上，固件驱动跟着失败。
+真正的堵点还要往前一层。`IntelBTPatcher` 在插件配置里写了一个**支持的最高内核版本**，这份 2.5.0 的写法停在 macOS 15，于是 Lilu 在 Tahoe 上直接拒绝加载它；固件上传补丁没打上，固件驱动跟着失败。
+
+顺便说明一点容易误判的地方：**2.5.0 并不是官方正式版**。上游最后一个打了 tag 的 release 是 v2.4.0（2024-02），而把上限提到 Tahoe 的那个提交（`a414375`，2026-01）至今只在 `master` 上。所以"升级到最新正式版"这条路走不通——最新正式版比你手上这份还旧。
 
 解法就是这个 kext 自己留的兼容开关：
 
@@ -176,7 +178,11 @@ Chipset: BCM_4350C2    Firmware: v0    Address: NULL    State: Off
 -ibtcompatbeta
 ```
 
-把它加进 `boot-args`，同时把 `BlueToolFixup` 升到 **2.7.2**（2.6.9 早于 Tahoe，patch 的 `BlueTool` 偏移量对不上）。重启后状态会变成正常值：`THIRD_PARTY_DONGLE`、固件 `v13719`。
+把它加进 `boot-args`，同时把 `BlueToolFixup` 升到 **2.7.2**（2.6.9 早于 Tahoe，patch 的 `BlueTool` 偏移量对不上）。重启后开关能打开，设备能正常配对。
+
+这个参数之所以有效，是因为 `-ibtcompatbeta` 就写在同一个 `ADDPR` 声明的 `bootargBeta` 数组里——那正是 Lilu 拒绝加载"版本超限"插件之前会先查的白名单。
+
+参照数据：同一颗芯片在 macOS 14 上正常工作时报的是 `THIRD_PARTY_DONGLE`、固件 `v13719`；Tahoe 这边我只确认了开关能开、能配对，没去记它具体报什么版本号。
 
 同一个 kext 还有两个同族参数，需要时可用：`-ibtcompatdbg` 输出调试信息，`-ibtcompatoff` 彻底关掉补丁。
 

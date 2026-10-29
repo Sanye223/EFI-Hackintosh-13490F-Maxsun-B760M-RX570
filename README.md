@@ -168,7 +168,9 @@ Those are placeholder values for "no firmware loaded" — not a Broadcom chip. `
 
 The firmware driver matched the device but `start()` failed, so the firmware was never uploaded.
 
-The actual blocker sits one layer earlier. `IntelBTPatcher` carries a **maximum supported kernel version** in its plugin configuration, and in the 2.5.0 release that ceiling is macOS 15. Lilu refuses to load it on Tahoe, the firmware upload patch never gets applied, and the firmware driver fails as a consequence.
+The actual blocker sits one layer earlier. `IntelBTPatcher` carries a **maximum supported kernel version** in its plugin configuration, and in the 2.5.0 build used here that ceiling is macOS 15. Lilu refuses to load it on Tahoe, the firmware upload patch never gets applied, and the firmware driver fails as a consequence.
+
+Worth knowing: **2.5.0 is not an official release.** The last tagged release is v2.4.0 (2024-02), and the upstream commit that raises the ceiling to Tahoe (`a414375`, 2026-01) still lives only on `master`. So "just update to the latest release" cannot work here — the latest release is older than the code you already have.
 
 The fix is a flag the kext already exposes for exactly this case:
 
@@ -176,7 +178,11 @@ The fix is a flag the kext already exposes for exactly this case:
 -ibtcompatbeta
 ```
 
-Add it to `boot-args` together with `BlueToolFixup` **2.7.2** (2.6.9 predates Tahoe and patches the wrong `BlueTool` offsets). After a reboot the correct values appear: `THIRD_PARTY_DONGLE`, firmware `v13719`.
+Add it to `boot-args` together with `BlueToolFixup` **2.7.2** (2.6.9 predates Tahoe and patches the wrong `BlueTool` offsets). After a reboot the toggle opens and devices connect.
+
+The flag works because `-ibtcompatbeta` is listed in the `bootargBeta` array of the same `ADDPR` declaration — that is the whitelist Lilu consults before rejecting a plugin for being newer than its declared ceiling.
+
+For reference, the same chip reports `THIRD_PARTY_DONGLE` with firmware `v13719` on macOS 14; on Tahoe I only ever verified that the toggle opens and devices pair.
 
 Related flags in the same kext, should you need them: `-ibtcompatdbg` for verbose logging and `-ibtcompatoff` to disable patching entirely.
 
