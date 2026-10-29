@@ -305,11 +305,30 @@ tools/macrecovery/ Recovery image downloader for Windows users
 
 ## Credits
 
+**What this repository is assembled from**
+
 - [Acidanthera](https://github.com/acidanthera) — OpenCore, Lilu, VirtualSMC, WhateverGreen, AppleALC, RestrictEvents, BrcmPatchRAM
 - [OpenIntelWireless](https://github.com/OpenIntelWireless) — AirportItlwm, IntelBluetoothFirmware
 - [laobamac/itlwm](https://github.com/laobamac/itlwm) — the AirportItlwm build for macOS 26 used here (2.4.0-alpha, commit `738d4c6`); this fork is where Tahoe support currently lives
 - [corpnewt](https://github.com/corpnewt) — GenSMBIOS, USBMap, macrecovery
 - The InsanelyMac and r/hackintosh communities for their write-ups on Tahoe USB behaviour
+
+**Inside the Wi-Fi kext**
+
+`AirportItlwm.kext` is not the work of one author — it is a stack. The binary in `EFI/OC/Kexts` carries the notice `Copyright © 2026 laobamac. Based on AirportItlwm by OpenIntelWireless.`, and the projects below are compiled into it. Wi-Fi on this machine works because of them, so they belong here rather than buried two repositories upstream:
+
+- **[zxystd](https://github.com/zxystd)** — author of itlwm and AirportItlwm; this build still carries the bundle identifier `com.zxystd.AirportItlwm`
+- **[OpenBSD](https://github.com/openbsd/src)** — `net80211` plus the `iwn`, `iwm` and `iwx` drivers, which supply the 802.11 stack and the firmware tables (98 device/firmware entries are compiled into this binary)
+- **[Intel](https://www.intel.com)** and **[Linux](https://www.kernel.org)** — the `iwlwifi` driver lineage and the wireless firmware blobs
+- **[AppleIntelWiFi](https://github.com/AppleIntelWiFi)** — Black80211-Catalina, where the `AppleIntelWifiAdapter` emulation layer comes from
+- **[mercurysquad](https://github.com/mercurysquad)** — Voodoo80211, the earlier attempt at the same emulation
+- **[rpeshkov](https://github.com/rpeshkov)** — black80211
+- **[usr-sse2](https://github.com/usr-sse2)** — Apple RSN Supplicant integration and bug fixes
+- **[pigworlds](https://github.com/OpenIntelWireless/itlwm/commits?author=pigworlds)** — DVM device support, MIRA fixes, TX aggregation for MVM Gen 1
+- **[ErrorErrorError](https://github.com/ErrorErrorError)** — UserClient bug fixes
+- **[Acidanthera](https://github.com/acidanthera)** — MacKernelSDK, used to build the kext
+
+This list comes from the [Credits section of laobamac/itlwm](https://github.com/laobamac/itlwm#credits); everything above is what that project in turn stands on.
 
 ## Disclaimer
 

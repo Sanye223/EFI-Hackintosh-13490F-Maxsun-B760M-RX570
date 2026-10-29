@@ -305,11 +305,30 @@ tools/macrecovery/ Windows 用户的恢复镜像下载脚本
 
 ## 致谢
 
+**本仓库由这些项目拼装而成**
+
 - [Acidanthera](https://github.com/acidanthera) — OpenCore、Lilu、VirtualSMC、WhateverGreen、AppleALC、RestrictEvents、BrcmPatchRAM
 - [OpenIntelWireless](https://github.com/OpenIntelWireless) — AirportItlwm、IntelBluetoothFirmware
 - [laobamac/itlwm](https://github.com/laobamac/itlwm) — 本仓库使用的 macOS 26 版 AirportItlwm 出自这个分支（2.4.0-alpha，提交 `738d4c6`）；目前 Tahoe 支持就维护在这里
 - [corpnewt](https://github.com/corpnewt) — GenSMBIOS、USBMap、macrecovery
 - InsanelyMac 与 r/hackintosh 社区关于 Tahoe USB 行为的讨论
+
+**Wi-Fi 驱动内部**
+
+`AirportItlwm.kext` 不是一个人的作品，而是一层层叠起来的。ESP 上那份的版权声明写的是 `Copyright © 2026 laobamac. Based on AirportItlwm by OpenIntelWireless.`，下面这些项目的代码都编译在里面——这台机器能连上 Wi-Fi，靠的就是它们，所以不该只出现在上游两层的 README 里：
+
+- **[zxystd](https://github.com/zxystd)** —— itlwm / AirportItlwm 的作者；这份二进制的 bundle id 至今仍是 `com.zxystd.AirportItlwm`
+- **[OpenBSD](https://github.com/openbsd/src)** —— `net80211` 以及 `iwn`、`iwm`、`iwx` 三个驱动，提供整个 802.11 协议栈与固件表（本二进制里编入了 98 条设备/固件条目）
+- **[Intel](https://www.intel.com)** 与 **[Linux](https://www.kernel.org)** —— `iwlwifi` 驱动谱系与无线固件
+- **[AppleIntelWiFi](https://github.com/AppleIntelWiFi)** —— Black80211-Catalina，`AppleIntelWifiAdapter` 这层模拟的源头
+- **[mercurysquad](https://github.com/mercurysquad)** —— Voodoo80211，同一思路更早的一次尝试
+- **[rpeshkov](https://github.com/rpeshkov)** —— black80211
+- **[usr-sse2](https://github.com/usr-sse2)** —— Apple RSN Supplicant 的接入与若干缺陷修复
+- **[pigworlds](https://github.com/OpenIntelWireless/itlwm/commits?author=pigworlds)** —— DVM 设备支持、MIRA 修正、MVM Gen 1 的 TX 聚合
+- **[ErrorErrorError](https://github.com/ErrorErrorError)** —— UserClient 修复
+- **[Acidanthera](https://github.com/acidanthera)** —— MacKernelSDK，编译这个 kext 时用到
+
+这份名单取自 [laobamac/itlwm 的 Credits](https://github.com/laobamac/itlwm#credits)，上面列的正是那个项目本身所站立的肩膀。
 
 ## 免责声明
 
