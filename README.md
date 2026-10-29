@@ -6,17 +6,7 @@
 
 English: OpenCore EFI for Maxsun Terminator B760M D4 with Intel i5-13490F (Raptor Lake), AMD RX 570 (Polaris) and Intel AX210 — running macOS Tahoe 26.
 
-![macOS](https://img.shields.io/badge/macOS-Tahoe%2026.7.1-000000?logo=apple\&logoColor=white)
-
-![OpenCore](https://img.shields.io/badge/OpenCore-1.0.8-9cf)
-
-![CPU](https://img.shields.io/badge/CPU-i5--13490F-0071c5?logo=intel\&logoColor=white)
-
-![GPU](https://img.shields.io/badge/GPU-RX_570_4GB-ed1c24?logo=amd\&logoColor=white)
-
-![Wi-Fi](https://img.shields.io/badge/Wi--Fi%20%2B%20BT-AX210-0071c5?logo=intel\&logoColor=white)
-
-![状态](https://img.shields.io/badge/状态-全功能可用-brightgreen)
+![macOS](https://img.shields.io/badge/macOS-Tahoe%2026.7.1-000000?logo=apple&logoColor=white) ![OpenCore](https://img.shields.io/badge/OpenCore-1.0.8-9cf) ![CPU](https://img.shields.io/badge/CPU-i5--13490F-0071c5?logo=intel&logoColor=white) ![GPU](https://img.shields.io/badge/GPU-RX_570_4GB-ed1c24?logo=amd&logoColor=white) ![Wi-Fi](https://img.shields.io/badge/Wi--Fi%20%2B%20BT-AX210-0071c5?logo=intel&logoColor=white) ![状态](https://img.shields.io/badge/状态-全功能可用-brightgreen)
 
 </div>
 
