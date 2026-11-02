@@ -310,7 +310,7 @@ tools/macrecovery/ Windows 用户的恢复镜像下载脚本
 - `RestrictEvents` 1.1.5 → 1.1.6，`AirportItlwm` 换成 Tahoe 版本
 - README 重写，`config.plist` 脱敏
 
-**更早 — Sequoia 15.7.1** — 上一版可用配置，`iMacPro1,1` + `USBInjectAll`。
+**更早 — Sequoia 15.7.x** — 上一版可用配置，`iMacPro1,1` + `USBInjectAll`，已在 15.7.9 上复验；完整 EFI 见 [`sequoia-15`](https://github.com/Sanye223/EFI-Hackintosh-13490F-Maxsun-B760M-RX570/tree/sequoia-15) 分支。
 
 ## 致谢
 

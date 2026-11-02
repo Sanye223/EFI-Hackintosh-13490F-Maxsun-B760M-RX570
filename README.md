@@ -310,7 +310,7 @@ tools/macrecovery/ Recovery image downloader for Windows users
 - `RestrictEvents` 1.1.5 → 1.1.6, `AirportItlwm` replaced with the Tahoe build
 - README rewritten; `config.plist` sanitized
 
-**Earlier — Sequoia 15.7.1** — previous working configuration, `iMacPro1,1` with `USBInjectAll`.
+**Earlier — Sequoia 15.7.x** — previous working configuration, `iMacPro1,1` with `USBInjectAll`, re-verified on 15.7.9; the full EFI lives on the [`sequoia-15`](https://github.com/Sanye223/EFI-Hackintosh-13490F-Maxsun-B760M-RX570/tree/sequoia-15) branch.
 
 ## Credits
 
