@@ -12,6 +12,9 @@
 
 ---
 
+> **要装的是 macOS Sequoia 15 而不是 Tahoe 26？**
+> 本分支只适用于 Tahoe。Sequoia 15.7.9 的版本（机型、Wi-Fi 驱动的内核版本区间、USB 方案都不一样）在 [`sequoia-15`](https://github.com/Sanye223/EFI-Hackintosh-13490F-Maxsun-B760M-RX570/tree/sequoia-15) 分支。
+
 ## 简介
 
 一套在入门级 Raptor Lake 平台、Polaris 显卡与 Intel AX210 网卡上跑通的 OpenCore EFI。下面写的每一条结论都在实机上验证过，不是照着模板抄的。

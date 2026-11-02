@@ -12,6 +12,9 @@
 
 ---
 
+> **Installing macOS Sequoia 15 instead of Tahoe 26?**
+> This branch targets Tahoe only. A verified Sequoia 15.7.9 build — different SMBIOS, Wi-Fi driver kernel gating and USB approach — lives on the [`sequoia-15`](https://github.com/Sanye223/EFI-Hackintosh-13490F-Maxsun-B760M-RX570/tree/sequoia-15) branch.
+
 ## Overview
 
 A working OpenCore EFI for a budget Raptor Lake desktop with a Polaris GPU and an Intel AX210 wireless card. Every claim below was verified on the actual machine, not copied from a template.
